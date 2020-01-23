@@ -1,0 +1,21 @@
+<div class="card" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title">Experience</h5>
+    <div class="card-body" *ngFor="let experience of experienceList.reverse()">
+    <b [innerText]="experience.title"></b>
+    <h6 class="card-subtitle mb-2 text-muted" [innerText]="experience.companyName"></h6>
+    <h6 class="card-text" [innerText]="experience.location" style="font-style: italic"></h6>
+    <h6 style="font-style: italic" *ngIf="experience.startDate" [innerText]="experience.startDate + '  to  '+ experience.endDate "></h6>
+    <p class="card-text" [innerText]="experience.description" style="font-style:italic"></p>
+      <hr>
+    <div class="d-flex flex-row">
+      <button class="btn btn-outline-primary" style="font-size: xx-small; margin-right: 5px" (click)="open(experience)">EDIT</button>
+      <button class="btn btn-outline-danger" style="font-size: xx-small;" (click)="delete(experience)">DELETE</button>
+    </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-dark btn-sm" (click)="open()">ADD</button>
+  </div>
+</div>
+

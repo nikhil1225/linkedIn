@@ -1,0 +1,31 @@
+<div class="container-sm">
+<div class="card" style="width: 70rem">
+  <div class="card-body" [ngStyle]="{backgroundColor: '#2C9CDC'}">
+    <br>
+    <br>
+    <br>
+    <h1 class="align-content-end" [innerText]="getName()"></h1>
+    <br>
+    <br>
+  </div>
+</div>
+<div class="card" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title" id="designation" [innerText]="profile.designation"></h5>
+    <h6 class="card-subtitle mb-2 text-muted" id="state" [innerText]="profile.address"></h6>
+    <p class="card-text" id="about" [innerText]="profile.about"></p>
+    <a href=" " class="card-link"><b>Connect</b></a>
+    <a href=" " class="card-link"><b>Message</b></a>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-dark btn-sm" (click)="open()">EDIT</button>
+  </div>
+</div>
+  <br>
+  <app-experience></app-experience>
+  <br>
+  <app-education></app-education>
+</div>
+<br>
+<br>
+<br>

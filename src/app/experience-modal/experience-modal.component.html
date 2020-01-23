@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4>Experience</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form  [formGroup]="experienceForm" (ngSubmit)="onSave()" class="modal-footer">
+  <div class="modal-body">
+    <div class="form-group">
+      <input type="text" class="form-control" id="title"  placeholder="Title" formControlName="title">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="companyName"  placeholder="Company" formControlName="companyName">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="Work-location"  placeholder="Location" formControlName="location">
+    </div>
+    <div class="form-group">
+      <label for="startDate" style="font-style: italic">Start-date: </label>
+      <input type="date" class="form-control" id="startDate"  placeholder="start-date" formControlName="startDate">
+      <label for="endDate" style="font-style: oblique">End-date: </label>
+      <input type="date" class="form-control" id="endDate"  placeholder="end-date" formControlName="endDate">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="description" placeholder="Description" formControlName="description">
+    </div>
+    <div class="modal-footer">
+      <input type="submit" class="btn btn-outline-dark btn-sm" >
+    </div>
+  </div>
+</form>

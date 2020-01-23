@@ -1,0 +1,21 @@
+<div class="card" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title">Education </h5>
+    <div class="card-body" *ngFor="let education of educationList.reverse()">
+    <h6 class="card-title" [innerText]="education.organisation" style="font-style: initial"></h6>
+    <h6 class="card-subtitle" style="font-style: italic" *ngIf="education.startDate" [innerText]="education.startDate + ' to '+ education.endDate"></h6>
+    <h6 class="card-text" [innerText]="education.degree" style="font-style:initial"></h6>
+    <p class="card-subtitle" style="font-style: italic" [innerText]="education.fieldOfStudy"></p>
+      <hr>
+    <div class="d-flex flex-row">
+      <button class="btn btn-outline-primary" style="font-size: xx-small;margin-right: 5px" (click)="open(education)">EDIT</button>
+      <button class="btn btn-outline-danger" style="font-size: xx-small;" (click)="delete(education)">DELETE</button>
+
+    </div>
+    </div>
+  </div>
+    <div class="card-footer">
+      <button class="btn btn-dark btn-sm" (click)="open()">ADD</button>
+    </div>
+</div>
+

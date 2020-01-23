@@ -1,0 +1,43 @@
+ <nav *ngIf="!getLoginStatus(); else loggedIN">
+    <div class="jumbotron" [ngStyle]="{backgroundColor: '#0e76a8'}" >
+    <h1 align="center">Welcome to LinkedIN!!</h1>
+    </div>
+   <div class="container">
+    <div class="nav nav-pills" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" id="nav-register-tab" data-toggle="tab" routerLink="" role="tab" aria-controls="nav-register" aria-selected="true">Register</a>
+      <a class="nav-item nav-link" routerLinkActive="active" id="nav-login-tab" data-toggle="tab" routerLink="login" role="tab" aria-controls="nav-login" aria-selected="false" >Login</a>
+    </div>
+     <div class="container-lg">
+       <div class="row">
+         <div class="col-xl-6">
+           <router-outlet></router-outlet>
+         </div>
+         <div class="col-xl-6">
+         </div>
+       </div>
+     </div>
+   </div>
+  </nav>
+  <br>
+  <ng-template #loggedIN>
+  <nav class="navbar navbar-expand-lg navbar-light" style="width: 100rem" [ngStyle]="{backgroundColor: '#2C9CDC'}">
+    <a class="navbar-brand" href="#">LinkedIN</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/profile">MyProfile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item align-self-end">
+          <a class="nav-link" (click)="logOut()"><b>logout</b></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <hr [ngStyle]="{width: '100rem'}">
+    <app-profile></app-profile>
+  </ng-template>
+

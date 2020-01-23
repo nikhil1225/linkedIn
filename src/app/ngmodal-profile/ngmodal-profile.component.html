@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4>Profile!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form  [formGroup]="profileForm" (ngSubmit)="onSave()" class="modal-footer">
+  <div class="modal-body">
+  <div class="form-group">
+    <input type="text" class="form-control" id="designation"  placeholder="Designation" formControlName="designation">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="address"  placeholder="Address" formControlName="address">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="about"  placeholder="Tell me About yourself!!" formControlName="about">
+  </div>
+<div class="modal-footer">
+  <input type="submit" class="btn btn-outline-dark btn-sm" >
+</div>
+  </div>
+</form>
